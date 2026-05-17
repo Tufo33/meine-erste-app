@@ -1,6 +1,7 @@
 "use client";
 
 import Navbar from "./components/Navbar";
+import Stats from "./components/Stats";
 
 const pakete = [
   { id: "1234", empfaenger: "Max Mustermann", status: "Zugestellt" },
@@ -24,10 +25,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
+      <div className="p-8">  <Stats pakete={pakete} />
+
     <div className="min-h-screen bg-gray-100 p-8">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">
         📦 Meine Pakete
       </h1>
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {pakete.map((paket) => (
           <div key={paket.id} className="bg-white rounded-xl shadow p-6">
@@ -44,6 +48,7 @@ export default function Home() {
         ))}
         </div>
       </div>
+    </div>
     </div>
   )
 }
